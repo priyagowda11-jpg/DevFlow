@@ -10,15 +10,17 @@ interface NavigationItemProps {
   icon: React.ReactNode;
   label: string;
   className?: string;
+  onClick?: () => void;
 }
 
-export const NavigationItem = ({ href, icon, label, className }: NavigationItemProps) => {
+export const NavigationItem = ({ href, icon, label, className, onClick }: NavigationItemProps) => {
   const pathname = usePathname();
   const isActive = pathname === href || pathname.startsWith(href + '/');
 
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={cn(
         'flex items-center gap-3 px-3 py-2 rounded-lg transition-all group',
         'text-sm font-medium',
