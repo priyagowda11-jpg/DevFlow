@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+@theme {
+  /* -------------------------------------------------------------------------- */
+  /* PRIMARY BRAND COLORS (Emerald)                                            */
+  /* -------------------------------------------------------------------------- */
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-200: #a7f3d0;
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #10b981; /* Base */
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #064e3b;
+  --color-primary-950: #022c22;
+
+  /* -------------------------------------------------------------------------- */
+  /* SECONDARY BRAND COLORS (Teal)                                              */
+  /* -------------------------------------------------------------------------- */
+  --color-secondary-50: #f0fdfa;
+  --color-secondary-100: #ccfbf1;
+  --color-secondary-200: #99f6e4;
+  --color-secondary-300: #5eead4;
+  --color-secondary-400: #2dd4bf;
+  --color-secondary-500: #14b8a6; /* Base */
+  --color-secondary-600: #0d9488;
+  --color-secondary-700: #0f766e;
+  --color-secondary-800: #115e59;
+  --color-secondary-900: #134e4a;
+  --color-secondary-950: #042f2e;
+
+  /* -------------------------------------------------------------------------- */
+  /* ACCENT BRAND COLORS (Warm Orange)                                          */
+  /* -------------------------------------------------------------------------- */
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316; /* Base */
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+  --color-accent-800: #9a3412;
+  --color-accent-900: #7c2d12;
+  --color-accent-950: #431407;
+
+  /* -------------------------------------------------------------------------- */
+  /* SUPPORT BRAND COLORS (Amber)                                               */
+  /* -------------------------------------------------------------------------- */
+  --color-support-50: #fffbeb;
+  --color-support-100: #fef3c7;
+  --color-support-200: #fde68a;
+  --color-support-300: #fcd34d;
+  --color-support-400: #fbbf24;
+  --color-support-500: #f59e0b; /* Base */
+  --color-support-600: #d97706;
+  --color-support-700: #b45309;
+  --color-support-800: #92400e;
+  --color-support-900: #78350f;
+  --color-support-950: #451a03;
+
+  /* -------------------------------------------------------------------------- */
+  /* NEUTRAL PALETTE (Warm Cream & Charcoal)                                    */
+  /* -------------------------------------------------------------------------- */
+  --color-neutral-50: #fdfbf7; /* Cream */
+  --color-neutral-100: #f5f5f0;
+  --color-neutral-200: #e5e5df;
+  --color-neutral-300: #d1d1ca;
+  --color-neutral-400: #b8b8b0;
+  --color-neutral-500: #a3a39b;
+  --color-neutral-600: #7a7a72;
+  --color-neutral-700: #52524d;
+  --color-neutral-800: #373733;
+  --color-neutral-900: #1f1f1b;
+  --color-neutral-950: #1c1917; /* Deep Charcoal */
+
+  /* -------------------------------------------------------------------------- */
+  /* TYPOGRAPHY COLORS                                                          */
+  /* -------------------------------------------------------------------------- */
+  --color-text-main: var(--color-neutral-950);
+  --color-text-muted: var(--color-neutral-600);
+  --color-text-inverse: var(--color-neutral-50);
+
+  /* -------------------------------------------------------------------------- */
+  /* SPACING SYSTEM (4px/8px increments)                                        */
+  /* -------------------------------------------------------------------------- */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem;   /* 8px */
+  --spacing-3: 0.75rem;  /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+
+  /* -------------------------------------------------------------------------- */
+  /* BORDER RADIUS SYSTEM                                                       */
+  /* -------------------------------------------------------------------------- */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+
+  /* -------------------------------------------------------------------------- */
+  /* SHADOW SYSTEM (Premium Depth)                                             */
+  /* -------------------------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-elevated: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+:root {
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-text-main);
+  --card: var(--color-neutral-100);
+  --card-foreground: var(--color-text-main);
+  --border: var(--color-neutral-200);
+  --ring: var(--color-primary-500);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-neutral-950);
+    --foreground: var(--color-neutral-50);
+    --card: var(--color-neutral-900);
+    --card-foreground: var(--color-neutral-50);
+    --border: var(--color-neutral-800);
+    --ring: var(--color-primary-400);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* -------------------------------------------------------------------------- */
+/* PREMIUM DEPTH UTILITIES                                                      */
+/* -------------------------------------------------------------------------- */
+
+/* Layered Surface: subtle gradient and border for a 3D effect */
+.surface-layered {
+  background: linear-gradient(
+    to bottom,
+    var(--color-neutral-100),
+    var(--color-neutral-50)
+  );
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.dark .surface-layered {
+  background: linear-gradient(
+    to bottom,
+    var(--color-neutral-800),
+    var(--color-neutral-900)
+  );
+  border: 1px solid var(--color-neutral-700);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Interactive "sink" effect for buttons/inputs */
+.interactive-sink {
+  transition: all 0.1s ease;
+}
+.interactive-sink:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Subtle highlight edge for premium feel */
+.edge-highlight {
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dark .edge-highlight {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Typography Utility Classes */
+.text-display {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.text-page-title {
+  font-size: clamp(1.75rem, 4vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.text-section-title {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-secondary {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
